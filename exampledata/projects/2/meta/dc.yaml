@@ -1,0 +1,69 @@
+title: Lighting the Darkness: Dutch Mining Lamps
+description:
+  abstract: |-
+    The mining lamp collection of Hans Dubbel.
+  description:
+    The Lighting the Darkness 3D Scholarly Model
+    tells of the rich history of coal mining in the province of Dutch Limburg
+    through the mining lamp collection of Hans Dubbel.
+provenance: |-
+  **Lighting the Darkness: Dutch Mining Lamps**
+  is a 3D Scholarly Model of 15 mining lamps from the collection of the ex-miner
+  Hans Dubbel.
+  The project was developed by the Nederland Mining Museum in Heerlen, Limburg
+  with the help of the PURE3D Project based out of Maastricht University. 
+
+  These 15 lamps are a selection of Hans Dubbel's collection
+  of more than 30 mining lamps ranging in date of manufacture from 1800-1970
+  and originating from countries across Continental Europe and the British Isles.
+  The lamps tell both big narratives about the role of industrial coal mining
+  in the Netherlands, how innovation in mining technology altered
+  mining safety and practice as well as personal stories about the miners,
+  their families and the coal mining communities.
+  The goal of the digitisation effort is to make this collection of lamps available
+  to online audiences so that they may appreciate
+  and connect with the history of Dutch coal mining. 
+instructionalMethod: |-
+  The mining lamp collection can be explored as a whole
+  in a single Voyager instance whereby all lamps that were digitized
+  can be viewed and explored via annotations, articles and guided tours.
+
+  The *first tour* talks about mining lamp technology, manufacture and development
+  within the context of early modern Europe.
+
+  The *second* tour highlights the collector, Hans Dubbel,
+  his life and his experiences as a miner from 1950-1970. 
+
+  Within the articles of each lamp there is a hyperlink to
+  individual Voyager instances of the single lamp.
+  The Voyager instances for each lamp contain information about the lamp's design
+  and ownership (if known) as well as first-hand accounts from ex-miners
+  about their experiences in the mines and their relationships with light
+  and these lamps. 
+creator: Kirstin Römer
+contributor: Simone Claessens
+  - Hans Dubbel
+  - Fons Bus
+  - Hans te Wiele
+  - Nico Maar
+audience:
+  - Early Modern History
+  - Dutch History
+  - Industrial History
+  - Digital Humanities
+subject:
+  - Mining Lamp Technology
+  - Dutch Mining History
+  - Limburg History
+coverage:
+  period: 1800-1980
+  place: Europe
+language:
+  - Dutch
+  - English
+rights:
+  rightsHolder: Nederlands Mining Museum
+  license: Creative Commons
+  acessRights: Open Access - Unrestricted Access
+dateAccepted: 2021-09-15
+dateSubmitted: 2021-03-13

@@ -1,0 +1,41 @@
+{
+  "asset": {
+    "type": "application/si-dpo-3d.document+json",
+    "version": "1.0",
+    "generator": "Some generator",
+    "copyright": "(c) Some institute. Copy left."
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "units": "mm",
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "building",
+      "model": 0
+    }
+  ],
+  "models": [
+    {
+      "units": "m",
+      "derivatives": [
+        {
+          "usage": "Web3D",
+          "quality": "Medium",
+          "assets": [
+            {
+              "uri": "NMM_004006_low.glb", 
+              "type": "Model"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

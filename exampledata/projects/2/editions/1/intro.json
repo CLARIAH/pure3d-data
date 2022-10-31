@@ -1,0 +1,480 @@
+{
+    "asset": {
+        "type": "application/si-dpo-3d.document+json",
+        "version": "1.0",
+        "generator": "Voyager",
+        "copyright": "(c) Smithsonian Institution. All rights reserved."
+    },
+    "scene": 0,
+    "scenes": [
+        {
+            "units": "mm",
+            "name": "Scene",
+            "nodes": [
+                0,
+                1,
+                6
+            ],
+            "setup": 0
+        }
+    ],
+    "nodes": [
+        {
+            "translation": [
+                -2633.3011349,
+                7698.4692376,
+                10555.6205979
+            ],
+            "rotation": [
+                -0.2025829,
+                -0.2200353,
+                -0.04677,
+                0.9530777
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "name": "Camera",
+            "camera": 0
+        },
+        {
+            "rotation": [
+                0,
+                -0.2249511,
+                0,
+                0.9743701
+            ],
+            "name": "Lights",
+            "children": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "translation": [
+                0,
+                0,
+                2
+            ],
+            "rotation": [
+                0.4829741,
+                -0.1070728,
+                0.1880998,
+                0.8484633
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "name": "Key",
+            "light": 0
+        },
+        {
+            "rotation": [
+                0.3546969,
+                0.163893,
+                -0.3861077,
+                0.8356136
+            ],
+            "name": "Fill #1",
+            "light": 1
+        },
+        {
+            "translation": [
+                0,
+                0,
+                1
+            ],
+            "rotation": [
+                0.9374013,
+                -0.3018693,
+                0.0532277,
+                0.1652891
+            ],
+            "name": "Fill #2",
+            "light": 2
+        },
+        {
+            "translation": [
+                1,
+                0,
+                -1
+            ],
+            "rotation": [
+                0.373256,
+                0.6426073,
+                -0.5786063,
+                0.3360813
+            ],
+            "scale": [
+                1,
+                1,
+                1
+            ],
+            "name": "Rim",
+            "light": 3
+        },
+        {
+            "name": "building",
+            "model": 0,
+            "meta": 0
+        }
+    ],
+    "cameras": [
+        {
+            "type": "perspective",
+            "perspective": {
+                "yfov": 52,
+                "znear": 0.1,
+                "zfar": 100000
+            }
+        }
+    ],
+    "lights": [
+        {
+            "color": [
+                1,
+                0.95,
+                0.9
+            ],
+            "intensity": 1,
+            "type": "directional",
+            "shadowEnabled": true
+        },
+        {
+            "color": [
+                0.9,
+                0.95,
+                1
+            ],
+            "intensity": 0.7,
+            "type": "directional",
+            "shadowEnabled": true
+        },
+        {
+            "color": [
+                0.8,
+                0.85,
+                1
+            ],
+            "intensity": 0.5,
+            "type": "directional"
+        },
+        {
+            "color": [
+                0.85,
+                0.9078313,
+                1
+            ],
+            "intensity": 0.6,
+            "type": "directional"
+        }
+    ],
+    "models": [
+        {
+            "units": "m",
+            "boundingBox": {
+                "min": [
+                    -1.4440494,
+                    0.0099067,
+                    -1.2611467
+                ],
+                "max": [
+                    7.6507297,
+                    4.7843217,
+                    1.2911513
+                ]
+            },
+            "derivatives": [
+                {
+                    "usage": "Web3D",
+                    "quality": "Medium",
+                    "assets": [
+                        {
+                            "uri": "NMM_004005_low.glb",
+                            "type": "Model"
+                        }
+                    ]
+                }
+            ],
+            "annotations": [
+                {
+                    "id": "fuXLbj6mtvdt",
+                    "titles": {
+                        "EN": "Traghaken"
+                    },
+                    "leads": {
+                        "EN": "Met lange haak, soms voor aan de wagons of nek. Slepershaak."
+                    },
+                    "taglist": {
+                        "EN": [
+                            "petrol"
+                        ]
+                    },
+                    "visible": false,
+                    "position": [
+                        4.8956425,
+                        1.4328806,
+                        -0.0563012
+                    ],
+                    "direction": [
+                        0.1487246,
+                        0.4672984,
+                        0.8715006
+                    ],
+                    "scale": 0.341171,
+                    "color": [
+                        0,
+                        0.61,
+                        0.87
+                    ]
+                },
+                {
+                    "id": "fyM9TbGi6tp7",
+                    "titles": {
+                        "EN": "Dochthaken"
+                    },
+                    "leads": {
+                        "EN": ""
+                    },
+                    "taglist": {
+                        "EN": [
+                            "petrol",
+                            "gas"
+                        ]
+                    },
+                    "visible": false,
+                    "position": [
+                        0.0667836,
+                        1.5474444,
+                        1.1553416
+                    ],
+                    "direction": [
+                        0.1159433,
+                        -0.0528553,
+                        0.9918485
+                    ],
+                    "scale": 0.341171,
+                    "color": [
+                        0,
+                        0.61,
+                        0.87
+                    ]
+                },
+                {
+                    "id": "iRfx08QIdttQ",
+                    "titles": {
+                        "EN": "Topf"
+                    },
+                    "leads": {
+                        "EN": ""
+                    },
+                    "taglist": {
+                        "EN": []
+                    },
+                    "position": [
+                        0.329257,
+                        0.4624289,
+                        1.1580629
+                    ],
+                    "direction": [
+                        0.2503654,
+                        0.0168489,
+                        0.9680048
+                    ],
+                    "scale": 0.341171,
+                    "color": [
+                        0,
+                        0.61,
+                        0.87
+                    ]
+                },
+                {
+                    "id": "o2pisXhUVSoI",
+                    "titles": {
+                        "EN": "Tragbügel"
+                    },
+                    "leads": {
+                        "EN": ""
+                    },
+                    "taglist": {
+                        "EN": []
+                    },
+                    "position": [
+                        0.8581464,
+                        4.0839297,
+                        -0.0586111
+                    ],
+                    "direction": [
+                        0.3201721,
+                        0.947284,
+                        0.0119531
+                    ],
+                    "scale": 0.341171,
+                    "color": [
+                        0,
+                        0.61,
+                        0.87
+                    ]
+                }
+            ]
+        }
+    ],
+    "metas": [
+        {
+            "collection": {
+                "titles": {
+                    "EN": "Frosch Lamp"
+                }
+            },
+            "articles": [
+                {
+                    "id": "by2tWdi7AD1j",
+                    "uris": {
+                        "EN": "articles/new-article-by2tWdi7AD1j-0.html"
+                    },
+                    "titles": {
+                        "EN": "Frosch Lamp"
+                    },
+                    "leads": {
+                        "EN": ""
+                    },
+                    "taglist": {
+                        "EN": []
+                    }
+                }
+            ]
+        }
+    ],
+    "setups": [
+        {
+            "units": "cm",
+            "interface": {
+                "visible": true,
+                "logo": true,
+                "menu": true,
+                "tools": true
+            },
+            "viewer": {
+                "shader": "Default",
+                "exposure": 1,
+                "gamma": 2,
+                "annotationsVisible": true
+            },
+            "reader": {
+                "enabled": true,
+                "position": "Right"
+            },
+            "navigation": {
+                "type": "Orbit",
+                "enabled": true,
+                "autoZoom": true,
+                "lightsFollowCamera": true,
+                "autoRotation": false,
+                "orbit": {
+                    "orbit": [
+                        -24,
+                        -26,
+                        0
+                    ],
+                    "offset": [
+                        0,
+                        0,
+                        150
+                    ],
+                    "minOrbit": [
+                        -90,
+                        null,
+                        null
+                    ],
+                    "maxOrbit": [
+                        90,
+                        null,
+                        null
+                    ],
+                    "minOffset": [
+                        null,
+                        null,
+                        0.1
+                    ],
+                    "maxOffset": [
+                        null,
+                        null,
+                        10000
+                    ]
+                }
+            },
+            "background": {
+                "style": "RadialGradient",
+                "color0": [
+                    0.2,
+                    0.25,
+                    0.3
+                ],
+                "color1": [
+                    0.01,
+                    0.03,
+                    0.05
+                ]
+            },
+            "floor": {
+                "visible": false,
+                "position": [
+                    0,
+                    -25,
+                    0
+                ],
+                "size": 50,
+                "color": [
+                    0.6,
+                    0.75,
+                    0.8
+                ],
+                "opacity": 0.5,
+                "receiveShadow": false
+            },
+            "grid": {
+                "visible": false,
+                "color": [
+                    0.5,
+                    0.7,
+                    0.8
+                ]
+            },
+            "tape": {
+                "enabled": false,
+                "startPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "startDirection": [
+                    0,
+                    0,
+                    0
+                ],
+                "endPosition": [
+                    0,
+                    0,
+                    0
+                ],
+                "endDirection": [
+                    0,
+                    0,
+                    0
+                ]
+            },
+            "slicer": {
+                "enabled": false,
+                "axis": "X",
+                "inverted": false,
+                "position": 0.5
+            }
+        }
+    ]
+}
