@@ -1,0 +1,42 @@
+title: Pure3D
+description:
+  abstract: |-
+    Pure3D: Scholarly projects centered around 3D data.
+  description: |-
+    Building on the conventions of text-based digital scholarly projects,
+    PURE3D provides tools to integrate multiple types of source materials
+    (e.g., annotations, images, video, structured/unstructured data)
+    and document the creation process (paradata),
+    providing users with direct access to the modelling and
+    interpretative choices creating a multimodal resource
+    that is impossible to replicate in print form.
+
+    The platform intends to target the unique needs and abilities
+    of both the content creators
+    (researchers, educators, cultural heritage managers)
+    as well as the end-users (students, public, academics, etc.).
+
+    PURE3D is aware of the issues that research-based 3D content creators may encounter
+    in making their projects and data accessible on the web.
+    File size, format, technical know-how and funding are some of the issues.
+    The PURE3D platform acts as a preservation repository for projects,
+    developing a conceptual and methodological framework
+    for valorizing and evaluating 3D scholarship,
+    so that the outputs of 3D digital scholarship
+    can meaningfully contribute to the whole of the academic ecosystem.
+provenance: |-
+    **PURE3D** was a three-year project funded by the
+    PDI-SSH (Platform Digitale Infrastructuur–Social Sciences and Humanities)
+    with a mission to advance the virtual research environment
+    through the development of an access infrastructure
+    for viewing interactive Digital Heritage and Digital Humanities 3D content online.
+
+    The Project was based out of the Faculty of Arts and Social Sciences
+    at Maastricht University under the direction of
+    Dr. Costas Papadopoulos and Prof. Susan Schreibman.
+
+    A number of partner institutions joined PURE3D as pilot projects
+    or in advisory roles and technical support.
+
+    Information about the partner institutions and pilot projects
+    can be viewed in the Partners section of this website.
