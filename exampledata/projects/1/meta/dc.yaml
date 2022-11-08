@@ -1,0 +1,120 @@
+title: "Contested Memories: The Battle of Mount Street Bridge"
+description:
+  abstract: |-
+    The Battle of Mount Street Bridge 3D Scholarly Model
+    details the events and actors of a key battle
+    which occurred during the 1916 Easter Rising in Dublin, Ireland.
+  description: |-
+    The Battle of Mount Street Bridge 3D Scholarly Model
+    is a 3D photorealistic construction of the area around Mount Street Bridge
+    that transports users back to a leafy suburb in Dublin, Ireland, in April 1916
+    to better understand the spatial and temporal dimensions
+    of one of the most important battles in the Easter Rising.
+    During this battle, the first of the week-long event, against all odds,
+    a small group of Irish Volunteers held off two battalions of
+    British soldiers for the better part of the day.
+    The goal of the project is to better understand the battle,
+    bringing new insights to this century-old event. 
+
+    The project contains four Voyager Instances
+    that help to tell both big narratives about the socio-political
+    context of the 1916 Rising,
+    the events before, during and after the Battle of Mount Street Bridge,
+    as well as the human toll of the Battle of Mount Street Bridge
+    on individuals from both sides of the conflict.
+    The 3D models of the neighborhood and individual buildings
+    offer an interactive method of telling these stories.
+    Archival images, records and oral accounts enrich the 3D model of the buildings
+    so that the stories are authenticated by primary sources. 
+provenance: |-
+  Contested Memories – Battle of Mount Street Bridge
+  is a Digital Humanities project directed by
+  Susan Schreibman and Costas Papadopoulos at Maastricht University.
+  The project is developed as part of a pilot project for the PURE3D Infrastructure,
+  funded by the Platform Digitale Infrastructuur - Social Sciences and Humanities
+  (PDI- SSH).
+  The project began in 2016 as part of the centennial commemoration
+  of the Easter Rising and was developed out of Maynooth University.
+  A 3D reconstruction of the Mount Street area of Dublin in 1916
+  was commissioned by the project and executed
+  as an offline Unity application by 3D artist John Buckley. 
+
+  The Mount Street Project was re-invigorated in 2021
+  as a pilot project for the PURE3D Infrastructure.
+  The 3D assets for the project are presented using the Smithsonian Voyager Explorer
+  online software in which text, images and other relevant multi-media
+  about the battle is presented via annotation labels, articles and tours. 
+
+  In Spring 2022, an Honours Course at Maastricht University collaboratively authored
+  a first draft of the Voyager Instance for 25 Northumberland Road.
+  In June 2022, this instance was user-tested via a focus group
+  and a Qualtrics Feedback Survey. 
+instructionalMethod: |-
+  The Battle of Mount Street Bridge 3D Scholarly Model
+  contains four individual Voyager instances for exploring and learning
+  about the events and actors of Mount Street.
+  The project is designed in a way that offers optional additional layers
+  of linked open data for further exploration of the base narrative. 
+
+  The first voyager instance is offers a broad overview of the wider battle
+  in terms of volunteer positioning and prep as well as British movements
+  to the area of conflict. This instance is meant to offer
+  a superficial introduction and big-picture view of the event
+  that offers opportunities to explore more about each specific buildings
+  and the individuals associated with them.
+  These more detailed stories are offered to the user within relevant articles
+  that provide a link to the subsequent instances on three key buildings from the battle. 
+
+  The other three instances focus on individual buildings
+  that were occupied by the Irish Volunteers.
+  They are:
+
+  *   25 Northumberland Road,
+  *   Parochial Hall and
+  *   Clanwilliam House.
+
+  Each instance contains annotation labels, articles and tours
+  that provide contextualizing information and personal stories
+  about the Irish and British combatants
+  as they specifically relate to the building and it's role during the battle. 
+
+  25 Northumberland Road tells of the Irish Volunteers,
+  Michael Malone and Seamus Grace, positioned in that building.
+  This building was the first to engage the British. 
+
+  Parochial Hall was the next building
+  with Irish Volunteer occupiers to engage in conflict with the British troops. 
+
+  Clanwilliam was the last building to fall to the British.
+  There were seven volunteers stationed inside. 
+creator: Susan Schreibman
+contributor:
+  - Kelly Gillikin Schoueri
+  - Costas Papadopoulos
+  - Billy Donnelly
+  - Luca Moines
+  - John Kaulakis
+  - Sandra Boheme Martinez
+audience:
+  - Digital Humanities
+  - Early Modern History
+  - Irish History
+subject:
+  - Irish History
+  - Easter Rising
+  - British History
+  - World War I
+  - 3D Storytelling
+  - 3D annotation
+  - 3D Digital Scholarly Model
+coverage:
+  period: 1900-1950 CE
+  place: British Isles
+language:
+  - English
+rights:
+  rightsHolder: Faculty of Arts and Social Sciences, Maastricht University
+  license: Creative Commons
+  accessRights: Open Access - Unrestricted Access
+dateAccepted: 2022-10-12
+dateSubmitted: 2022-04-18

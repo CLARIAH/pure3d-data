@@ -1,0 +1,970 @@
+{
+  "asset": {
+    "type": "application/si-dpo-3d.document+json",
+    "version": "1.0",
+    "generator": "Voyager",
+    "copyright": "(c) Smithsonian Institution. All rights reserved."
+  },
+  "scene": 0,
+  "scenes": [
+    {
+      "units": "mm",
+      "name": "Scene",
+      "nodes": [
+        0,
+        1,
+        6
+      ],
+      "setup": 0
+    }
+  ],
+  "nodes": [
+    {
+      "translation": [
+        -211.30349071332444,
+        4884.425567010382,
+        21.793524042360445
+      ],
+      "rotation": [
+        -0.6484288419798829,
+        -0.006366920308321574,
+        -0.005423457329629505,
+        0.7612293250558659
+      ],
+      "scale": [
+        1,
+        1,
+        0.9999999999999999
+      ],
+      "name": "Camera",
+      "camera": 0
+    },
+    {
+      "rotation": [
+        0,
+        -0.008363705137008936,
+        0,
+        0.9999650236065165
+      ],
+      "scale": [
+        122.57274311667288,
+        122.57274311667288,
+        122.57274311667288
+      ],
+      "name": "Lights",
+      "children": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "translation": [
+        0,
+        0,
+        2
+      ],
+      "rotation": [
+        0.4829741072455526,
+        -0.10707280931314123,
+        0.18809980282186348,
+        0.8484632516582726
+      ],
+      "scale": [
+        1,
+        0.9999999999999999,
+        1
+      ],
+      "name": "Key",
+      "light": 0
+    },
+    {
+      "rotation": [
+        0.3546969030895817,
+        0.16389300975709784,
+        -0.38610770336318506,
+        0.8356135648103293
+      ],
+      "name": "Fill #1",
+      "light": 1
+    },
+    {
+      "translation": [
+        0,
+        0,
+        1
+      ],
+      "rotation": [
+        0.9374013284601787,
+        -0.3018692929093914,
+        0.05322770161603092,
+        0.1652891139190696
+      ],
+      "name": "Fill #2",
+      "light": 2
+    },
+    {
+      "translation": [
+        1,
+        0,
+        -1
+      ],
+      "rotation": [
+        0.3732559778560461,
+        0.6426073095312872,
+        -0.5786062656733415,
+        0.3360812551381556
+      ],
+      "scale": [
+        0.9999999999999994,
+        0.9999999999999997,
+        0.9999999999999997
+      ],
+      "name": "Rim",
+      "light": 3
+    },
+    {
+      "name": "building",
+      "model": 0,
+      "meta": 0
+    }
+  ],
+  "cameras": [
+    {
+      "type": "perspective",
+      "perspective": {
+        "yfov": 52,
+        "znear": 72.30176202406602,
+        "zfar": 72301.76202406602
+      }
+    }
+  ],
+  "lights": [
+    {
+      "color": [
+        1,
+        0.95,
+        0.9
+      ],
+      "intensity": 1,
+      "type": "directional",
+      "shadowEnabled": true
+    },
+    {
+      "color": [
+        0.9,
+        0.95,
+        1
+      ],
+      "intensity": 0.7,
+      "type": "directional",
+      "shadowEnabled": true
+    },
+    {
+      "color": [
+        0.8,
+        0.85,
+        1
+      ],
+      "intensity": 0.5,
+      "type": "directional"
+    },
+    {
+      "color": [
+        0.85,
+        0.9078313,
+        1
+      ],
+      "intensity": 0.6,
+      "type": "directional"
+    }
+  ],
+  "models": [
+    {
+      "units": "m",
+      "translation": [
+        -0.0488554,
+        0.0644097,
+        -0.2774613
+      ],
+      "rotation": [
+        -0.7071067999999991,
+        0,
+        0,
+        0.7071067623730954
+      ],
+      "boundingBox": {
+        "min": [
+          -1.73455011844635,
+          -1.5078229904174805,
+          -0.11451780796051025
+        ],
+        "max": [
+          1.8322608470916748,
+          1.379003643989563,
+          1.6125068664550781
+        ]
+      },
+      "derivatives": [
+        {
+          "usage": "Web3D",
+          "quality": "Medium",
+          "assets": [
+            {
+              "uri": "yurt.glb",
+              "type": "Model"
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "zLSBzlrAco3Q",
+          "titles": {
+            "EN": "Entrance"
+          },
+          "leads": {
+            "EN": "Come in!"
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            -1.0019313,
+            0.7170829,
+            -0.3436248
+          ],
+          "direction": [
+            -0.9955154,
+            -0.0668923,
+            -0.0668923
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "1YPPETF03UFe",
+          "titles": {
+            "EN": "Location"
+          },
+          "leads": {
+            "EN": "Where is Mongolia?\n"
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            0.349902,
+            0.2640875,
+            -1.5416782
+          ],
+          "direction": [
+            0.0274236,
+            0.9990019,
+            0.0352588
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "gvsahPja5zE2",
+          "titles": {
+            "EN": "Nomadism"
+          },
+          "leads": {
+            "EN": "What is nomadism?"
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            -0.7188116,
+            0.1973303,
+            -1.5869777
+          ],
+          "direction": [
+            0.0195499,
+            0.9970451,
+            -0.0742897
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "rroyZlsoInHu",
+          "titles": {
+            "EN": "Seasonal Moving"
+          },
+          "leads": {
+            "EN": "What is the need for a portable home?"
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            -1.1533271,
+            0.1114998,
+            0.8389314
+          ],
+          "direction": [
+            -0.238611,
+            0.9661789,
+            0.0977913
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "QcBwgJ1vGe91",
+          "titles": {
+            "EN": "Five Stars"
+          },
+          "leads": {
+            "EN": "Comfortable as a luxury hotel?"
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            -0.2628337,
+            0.1556072,
+            1.1423213
+          ],
+          "direction": [
+            -0.0905014,
+            0.9955154,
+            0.0275439
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "SPdeETQjsUN5",
+          "titles": {
+            "EN": "Wall"
+          },
+          "leads": {
+            "EN": "A wooden frame is covered with felt."
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            0.5251397,
+            1.0914001,
+            0.6094558
+          ],
+          "direction": [
+            0.2630487,
+            0.8441114,
+            0.4672058
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "957HfYVhw6O9",
+          "titles": {
+            "EN": "Floor"
+          },
+          "leads": {
+            "EN": "Animal dung is spread as insulation."
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            1.0520447,
+            0.2867374,
+            0.2273877
+          ],
+          "direction": [
+            0.9385114,
+            0.113878,
+            0.3259266
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        },
+        {
+          "id": "AWN3MrIKLYZ9",
+          "titles": {
+            "EN": "Skylight"
+          },
+          "leads": {
+            "EN": "Let the sun's rays in and use it as a chimney hole."
+          },
+          "taglist": {
+            "EN": []
+          },
+          "style": "Extended",
+          "position": [
+            -0.2521049,
+            1.488367,
+            -0.0694435
+          ],
+          "direction": [
+            -0.2719762,
+            0.949946,
+            0.1537256
+          ],
+          "scale": 0.1225727,
+          "color": [
+            0,
+            0.61,
+            0.87
+          ]
+        }
+      ]
+    }
+  ],
+  "metas": [
+    {
+      "collection": {
+        "titles": {
+          "EN": "Yurt"
+        }
+      },
+      "articles": [
+        {
+          "id": "5Liei3ygP5hD",
+          "uris": {
+            "EN": "location.html"
+          },
+          "titles": {
+            "EN": "Location"
+          },
+          "leads": {
+            "EN": ""
+          },
+          "taglist": {
+            "EN": []
+          }
+        },
+        {
+          "id": "RAEnsJQZNYqs",
+          "uris": {
+            "EN": "nomadism.html"
+          },
+          "titles": {
+            "EN": "Nomadism"
+          },
+          "leads": {
+            "EN": ""
+          }
+        },
+        {
+          "id": "VK8qZZHO1X29",
+          "uris": {
+            "EN": "seasonalMoving.html"
+          },
+          "titles": {
+            "EN": "Seasonal Moving"
+          },
+          "leads": {
+            "EN": ""
+          }
+        },
+        {
+          "id": "QbPaamZb9Isb",
+          "uris": {
+            "EN": "articles/five-stars-en.html"
+          },
+          "titles": {
+            "EN": "Five Stars"
+          },
+          "leads": {
+            "EN": ""
+          },
+          "taglist": {
+            "EN": []
+          }
+        },
+        {
+          "id": "OfJ5IC1lGbn8",
+          "uris": {
+            "EN": "entrance.html"
+          },
+          "titles": {
+            "EN": "Entrance"
+          },
+          "leads": {
+            "EN": ""
+          },
+          "taglist": {
+            "EN": []
+          }
+        },
+        {
+          "id": "fhRQHRGAdbK2",
+          "uris": {
+            "EN": "skylight.html"
+          },
+          "titles": {
+            "EN": "Skylight"
+          },
+          "leads": {
+            "EN": ""
+          },
+          "taglist": {
+            "EN": []
+          }
+        }
+      ]
+    }
+  ],
+  "setups": [
+    {
+      "units": "cm",
+      "interface": {
+        "visible": true,
+        "logo": true,
+        "menu": true,
+        "tools": true
+      },
+      "viewer": {
+        "shader": "Default",
+        "exposure": 1,
+        "toneMapping": false,
+        "gamma": 2
+      },
+      "reader": {
+        "enabled": false,
+        "position": "Overlay"
+      },
+      "navigation": {
+        "enabled": true,
+        "autoZoom": true,
+        "autoRotation": false,
+        "lightsFollowCamera": true,
+        "type": "Orbit",
+        "orbit": {
+          "orbit": [
+            -80.84990958408677,
+            -0.9584211849498807,
+            0
+          ],
+          "offset": [
+            -210.90939222682107,
+            751.7247834627697,
+            4826.299236551841
+          ],
+          "minOrbit": [
+            -90,
+            null,
+            null
+          ],
+          "maxOrbit": [
+            90,
+            null,
+            null
+          ],
+          "minOffset": [
+            null,
+            null,
+            0.1
+          ],
+          "maxOffset": [
+            null,
+            null,
+            10000
+          ]
+        }
+      },
+      "background": {
+        "style": "RadialGradient",
+        "color0": [
+          0.2,
+          0.25,
+          0.3
+        ],
+        "color1": [
+          0.01,
+          0.03,
+          0.05
+        ]
+      },
+      "floor": {
+        "visible": false,
+        "position": [
+          -0.000035677337564266054,
+          -50.10818134071053,
+          -213.05166664189585
+        ],
+        "size": 3566.810965538025,
+        "color": [
+          0.6,
+          0.75,
+          0.8
+        ],
+        "opacity": 0.5,
+        "receiveShadow": false
+      },
+      "grid": {
+        "visible": false,
+        "color": [
+          0.5,
+          0.7,
+          0.8
+        ]
+      },
+      "tape": {
+        "enabled": false
+      },
+      "slicer": {
+        "enabled": false,
+        "axis": "X",
+        "position": 0.5,
+        "inverted": false
+      },
+      "environment": {
+        "index": 0
+      },
+      "language": {
+        "language": "EN"
+      },
+      "tours": [
+        {
+          "steps": [
+            {
+              "id": "LMNgAb",
+              "titles": {
+                "EN": "Start"
+              }
+            },
+            {
+              "id": "Rh3e8Z",
+              "titles": {
+                "EN": "Location"
+              }
+            },
+            {
+              "id": "l5TSQb",
+              "titles": {
+                "EN": "Nomadism"
+              }
+            },
+            {
+              "id": "ZQRuDT",
+              "titles": {
+                "EN": "Seasonal Moving"
+              }
+            },
+            {
+              "id": "Drj4W8",
+              "titles": {
+                "EN": "Five Stars"
+              }
+            },
+            {
+              "id": "4V74ES",
+              "titles": {
+                "EN": "Wall"
+              }
+            },
+            {
+              "id": "T6sRrZ",
+              "titles": {
+                "EN": "Floor"
+              }
+            },
+            {
+              "id": "4BK1md",
+              "titles": {
+                "EN": "Entrance"
+              }
+            },
+            {
+              "id": "JESnMj",
+              "titles": {
+                "EN": "Skylight"
+              }
+            }
+          ],
+          "titles": {
+            "EN": "Introduction"
+          },
+          "leads": {
+            "EN": ""
+          },
+          "taglist": {
+            "EN": []
+          }
+        }
+      ],
+      "snapshots": {
+        "features": [
+          "interface",
+          "reader",
+          "viewer",
+          "navigation"
+        ],
+        "targets": [
+          "scenes/0/setup/reader/enabled",
+          "scenes/0/setup/reader/articleId",
+          "scenes/0/setup/navigation/orbit",
+          "scenes/0/setup/navigation/offset",
+          "scenes/0/setup/viewer/annotationsVisible",
+          "scenes/0/setup/viewer/activeAnnotation",
+          "scenes/0/setup/viewer/activeTags",
+          "scenes/0/setup/viewer/shader",
+          "scenes/0/setup/viewer/exposure"
+        ],
+        "states": [
+          {
+            "id": "Rh3e8Z",
+            "values": [
+              true,
+              "5Liei3ygP5hD",
+              [
+                0.971803,
+                -125.8475449,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4062.043872
+              ],
+              false,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "l5TSQb",
+            "values": [
+              true,
+              "RAEnsJQZNYqs",
+              [
+                1.8489874,
+                -109.942243,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4022.3333717
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "ZQRuDT",
+            "values": [
+              true,
+              "VK8qZZHO1X29",
+              [
+                -4.690695,
+                -52.5648758,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4303.8967078
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "Drj4W8",
+            "values": [
+              true,
+              "QbPaamZb9Isb",
+              [
+                -11.9754632,
+                -15.0483195,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4303.8967078
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "4V74ES",
+            "values": [
+              false,
+              "QbPaamZb9Isb",
+              [
+                -35.6509599,
+                46.1437334,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4577.5204038
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "T6sRrZ",
+            "values": [
+              false,
+              "QbPaamZb9Isb",
+              [
+                3.3225501,
+                86.9384354,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                3645.9657697
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "4BK1md",
+            "values": [
+              true,
+              "OfJ5IC1lGbn8",
+              [
+                2.330819,
+                258.9613439,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                3645.9657697
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "JESnMj",
+            "values": [
+              true,
+              "fhRQHRGAdbK2",
+              [
+                -89.2715232,
+                259.2385665,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                6637.4312938
+              ],
+              true,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          },
+          {
+            "id": "LMNgAb",
+            "values": [
+              false,
+              "5Liei3ygP5hD",
+              [
+                0.971803,
+                -125.8475449,
+                0
+              ],
+              [
+                -210.9093922,
+                751.7247835,
+                4062.043872
+              ],
+              false,
+              "",
+              "",
+              0,
+              1
+            ],
+            "curve": "EaseOutQuad",
+            "duration": 1.5
+          }
+        ]
+      }
+    }
+  ]
+}
