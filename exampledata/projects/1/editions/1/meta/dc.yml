@@ -1,4 +1,5 @@
-title: 25 Northumberland Road
+title: |-
+  25 Northumberland Road
 description:
   abstract: |-
     **25 Northumberland Road**,
@@ -46,7 +47,7 @@ provenance: |-
   blabla
 
 creator: 
-- Susan Schriebman
+- Susan Schreibman
 - Kelly Gillikin Schoueri
 - John Kaulakis
 - Luca Moine
