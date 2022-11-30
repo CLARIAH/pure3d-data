@@ -1,12 +1,16 @@
 title: |-
   Yurt
-description:
-  abstract: |-
-    Abstract
-  description: |-
-    Description
+
+abstract: |-
+  This yurt is ...
+
+description: |-
+  Yurts are found ...
+
 provenance: |-
-  Provenance
+  Made by Yuri.
+
 instructionalMethod: |-
-  Instructional method
+  Instructions on how to view this model of a yurt are forthcoming.
+
 creator: Yuri Ishida
