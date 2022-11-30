@@ -1,12 +1,16 @@
 title: |-
   Hurdy-Gurdy
-description:
-  abstract: |-
-    Abstract
-  description: |-
-    Description
+
+abstract: |-
+  This hurdy-gurdy is ...
+
+description: |-
+  Hurdy-gurdies are found ...
+
 provenance: |-
-  Provenance
+  Made by Shintaro.
+
 instructionalMethod: |-
-  Instructional method
+  Instructions on how to view this model of a hurdy-gurdy are forthcoming.
+
 creator: Shintaro Seki

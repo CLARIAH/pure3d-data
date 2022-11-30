@@ -1,14 +1,21 @@
 title: |-
   Tokyo University Workshop 2022
-description:
-  abstract: |-
-    Abstract
-  description: |-
-    Description
+
+abstract: |-
+  The Tokyo University Workshop was held ...
+
+description: |-
+  Two models were presented on the workshop:
+
+  * A yurt
+  * A Hurdy-Gurdy
+
 provenance: |-
-  Provenance
+  Asian scholars.
+
 instructionalMethod: |-
-  Instructional method
+  The two models are independent.
+
 creator: 
   - Shintaro Seki
   - Yuri Ishida
