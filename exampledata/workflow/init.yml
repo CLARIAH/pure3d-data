@@ -16,9 +16,9 @@ projectUsers:
     clan2: editor
     clan3: reader
   "2":
-    jap1: creator
-    jap2: editor
-    jap3: reader
+    yuri1: creator
+    yuri2: editor
+    yuri3: reader
 
 projectStatus:
   "1": false
