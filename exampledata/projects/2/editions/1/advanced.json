@@ -212,7 +212,7 @@
           "quality": "Medium",
           "assets": [
             {
-              "uri": "yurt.glb",
+              "uri": "model.glb",
               "type": "Model"
             }
           ]
@@ -623,7 +623,7 @@
       "floor": {
         "visible": false,
         "position": [
-          -0.000035677337564266054,
+          -3.5677337564266054e-05,
           -50.10818134071053,
           -213.05166664189585
         ],
