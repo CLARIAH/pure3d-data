@@ -1,6 +1,6 @@
 userRole:
   site:
-    susan: admin
+    susan: root
     costas: admin
     kelly: user
     daniel: guest
