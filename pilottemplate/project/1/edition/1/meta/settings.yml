@@ -1,0 +1,4 @@
+authorTool:
+  name: voyager
+  version: "0.24"
+  sceneFile: voyager.svx.json

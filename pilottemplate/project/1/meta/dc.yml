@@ -1,0 +1,49 @@
+title: |-
+  Untitled project «num»
+
+abstract: |-
+  Project is about research into object/place/problem.
+
+description: |-
+  Project is set up in this way.
+
+  Project uses these methods.
+
+  Project has these results.
+
+provenance: |-
+  The data in this project is collected from this source by these persons.
+
+creator: First name Lastname (Affiliation)
+
+contributor:
+  - First name Lastname (Affiliation)
+
+audience:
+  - Digital Humanities
+  - Early Modern History
+  - Art History
+
+subject:
+  - Settlements
+  - Industrial Heritage
+  - Archaeology
+  - Art History
+
+coverage:
+  period: 1900-1950 CE
+  place: Netherlands
+
+language:
+  - English
+
+rights:
+  rightsHolder: Department of Institute of University or Museum
+  license: Creative Commons
+  accessRights: Open Access - Unrestricted Access
+
+dateAccepted: |-
+  2023-04-01
+
+dateSubmitted: |-
+  2023-04-01

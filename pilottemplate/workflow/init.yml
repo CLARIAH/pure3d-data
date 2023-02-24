@@ -1,0 +1,61 @@
+userRole:
+  site:
+    susan: root
+    costas: admin
+    kelly: user
+    daniel: guest
+    historian: user
+    mount1: user
+    mount2: user
+    house1: user
+    house2: user
+    artist: user
+    stud1: user
+    stud2: user
+    stud3: user
+    social: user
+  project:
+    "1":
+      historian: organiser
+    "2":
+      artist: organiser
+    "3":
+      social: organiser
+  edition:
+    "1":
+      "1":
+        mount1: editor
+        mount2: reader
+      "2":
+        house1: editor
+        house2: reader
+    "2":
+      "1":
+        stud1: editor
+        stud2: reader
+      "2":
+        stud1: editor
+        stud3: reader
+    "3":
+      "1":
+        social: editor
+        stud1: reader
+
+status:
+  project:
+    field: isVisible
+    values:
+      "1": true
+      "2": true
+      "3": true
+  edition:
+    field: isPublished
+    values:
+      "1":
+        "1": true
+        "2": false
+      "2":
+        "1": true
+        "2": false
+      "3":
+        "1": false

@@ -1,0 +1,25 @@
+title: |-
+  Untitled edition 1 of project «num»
+
+abstract: |-
+  Edition is about research into object/place/problem.
+
+description: |-
+  Edition is set up in this way.
+
+  Edition uses these methods.
+
+  Edition has these results.
+
+provenance: |-
+  The data in this edition is collected from this source by these persons.
+
+creator: First name Lastname (Affiliation)
+
+contributor:
+  - First name Lastname (Affiliation)
+
+audience:
+  - Digital Humanities
+  - Early Modern History
+  - Art History
