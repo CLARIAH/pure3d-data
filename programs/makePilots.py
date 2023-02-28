@@ -13,7 +13,12 @@ makePilots.py number
 
 Makes a number of empty pilotprojects in directory `pilotdata`.
 
+A fixed number of example projects will be added as visible projects
+with published editions.
 """
+
+
+EXAMPLE_AMOUNT = 3
 
 
 def makeIcon(number, color, bgColor, path):
@@ -89,11 +94,21 @@ def makePilotData(amount):
         return False
 
     projectSource = f"{templateDir}/project/1"
+    exampleSource = f"{baseDir}/exampledata/project"
+
+    exampleProjects = list(range(1, EXAMPLE_AMOUNT + 1))
+
+    for p in exampleProjects:
+        projectSource = f"{exampleSource}/{p}"
+        projectDest = f"{dataDir}/project/{p}"
+        dirCopy(f"{exampleSource}/{p}", projectDest)
 
     projects = list(range(1, amount + 1))
 
+    projectSource = f"{templateDir}/project/1"
+
     for p in projects:
-        projectDest = f"{dataDir}/project/{p}"
+        projectDest = f"{dataDir}/project/{p + EXAMPLE_AMOUNT}"
         dirCopy(projectSource, projectDest)
         makeItemIcon(p, "project", f"{projectDest}/icon.png")
         metaProject = f"{projectDest}/meta/dc.yml"
@@ -105,17 +120,33 @@ def makePilotData(amount):
 
     users = {f"u{p:>02}": "user" for p in projects}
     users["a1"] = "admin"
-    project = {f"{p}": {f"u{p:>02}": "organiser"} for p in projects}
-    edition = {f"{p}": {"1": {f"u{p:>02}": "editor"}} for p in projects}
-    projectStatus = {f"{p}": False for p in projects}
-    editionStatus = {f"{p}": {"1": False} for p in projects}
+    projectWf = {f"{p + EXAMPLE_AMOUNT}": {f"u{p:>02}": "organiser"} for p in projects}
+    editionWf = {
+        f"{p + EXAMPLE_AMOUNT}": {"1": {f"u{p:>02}": "editor"}} for p in projects
+    }
+
+    projectStatus = {f"{p + EXAMPLE_AMOUNT}": False for p in projects}
+    for p in exampleProjects:
+        projectStatus[f"{p}"] = True
+
+    editionStatus = {f"{p + EXAMPLE_AMOUNT}": {"1": False} for p in projects}
+    for p in exampleProjects:
+        projectDest = f"{dataDir}/project/{p}"
+        editionStatus[f"{p}"] = {}
+        with os.scandir(f"{projectDest}/edition") as dh:
+            for entry in dh:
+                e = entry.name
+                if not e.isdigit() or not entry.is_dir():
+                    continue
+                editionStatus[f"{p}"][f"{e}"] = True
+
     status = dict(
         project=dict(field="isVisible", values=projectStatus),
         edition=dict(field="isPublished", values=editionStatus),
     )
 
     workflow = dict(
-        userRole=dict(site=users, project=project, edition=edition),
+        userRole=dict(site=users, project=projectWf, edition=editionWf),
         status=status,
     )
 
