@@ -1,18 +1,19 @@
 title: |-
-  Untitled edition 1 of project «num»
+  tutorial
 
 abstract: |-
-  Edition is about research into object/place/problem.
+  25 Northumberland Road
 
 description: |-
-  Edition is set up in this way.
-
-  Edition uses these methods.
-
-  Edition has these results.
+  25 Northumberland Road tells of the Irish Volunteers,
+  Michael Malone and Seamus Grace, positioned in that building.
+  This building was the first to engage the British.
 
 provenance: |-
-  The data in this edition is collected from this source by these persons.
+  In Spring 2022, an Honours Course at Maastricht University collaboratively authored
+  a first draft of the Voyager Instance for 25 Northumberland Road.
+  In June 2022, this instance was user-tested via a focus group
+  and a Qualtrics Feedback Survey. 
 
 creator: First name Lastname (Affiliation)
 
@@ -21,5 +22,3 @@ contributor:
 
 audience:
   - Digital Humanities
-  - Early Modern History
-  - Art History
