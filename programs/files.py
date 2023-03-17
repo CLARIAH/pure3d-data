@@ -180,9 +180,15 @@ def dirCopy(pathSrc, pathDst):
         copytree(pathSrc, pathDst)
 
 
-def dirMake(path):
+def dirMake(path, fresh=True):
     """Creates a directory if it does not already exist as directory.
+
+    If `fresh`, it will clear the directory first, if it exists.
     """
+    if dirExists(path):
+        if fresh:
+            dirRemove(path)
+
     if not dirExists(path):
         os.makedirs(path, exist_ok=True)
 
