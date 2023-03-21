@@ -4,7 +4,7 @@ import yaml
 
 from PIL import Image, ImageDraw, ImageFont
 
-from files import dirExists, dirCopy, dirMake
+from files import dirExists, dirCopy, dirMake, fileCopy
 
 
 HELP = """
@@ -99,6 +99,15 @@ def makePilotData(amountScratch, amountUser):
     if not dirExists(templateDir):
         print("Pilot template dir does not exist: {templateDir}")
         return False
+
+    with os.scandir(templateDir) as dh:
+        for entry in dh:
+            name = entry.name
+            if name == "project":
+                continue
+            (fileCopy if entry.is_file() else dirCopy)(
+                f"{templateDir}/{name}", f"{dataDir}/{name}"
+            )
 
     projectSource = f"{templateDir}/project/1"
     exampleSource = f"{baseDir}/exampledata/project"
