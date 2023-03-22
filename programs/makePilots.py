@@ -9,9 +9,9 @@ from files import dirExists, dirCopy, dirMake, fileCopy
 
 HELP = """
 
-makePilots.py number
+makePilots.py numberScratch numberUser
 
-Makes a number of empty pilotprojects in directory `pilotdata`.
+Makes a number of empty scratch and user projects in directory `pilotdata`.
 
 A fixed number of example projects will be added as visible projects
 with published editions.
@@ -19,6 +19,8 @@ with published editions.
 
 
 EXAMPLE_AMOUNT = 3
+MAX_USER = 50
+MAX_SCRATCH = 10
 
 
 def makeIcon(text, color, bgColor, path):
@@ -71,7 +73,7 @@ def fillinMeta(p, kind, path):
 
 
 def makePilotData(amountScratch, amountUser):
-    """Instantitates the pilot data template.
+    """Instantiates the pilot data template.
 
     Creates fresh pilot data based on the template,
     with
@@ -79,7 +81,7 @@ def makePilotData(amountScratch, amountUser):
     *   *amountUser* projects and one edition per project.
     *   *amountScratch* scratch projects for the admin, also each having one edition
 
-    The amounts should be between 1 and 20, including.
+    The amounts should be between 1 and 50, including.
 
     For every project there is one user, that
     will become the organiser of the project and the editor
@@ -88,7 +90,7 @@ def makePilotData(amountScratch, amountUser):
     One admin user will be created.
     That will also be the organiser of the scratch projects.
     """
-    baseDir = os.path.abspath("..")
+    baseDir = os.path.abspath(".")
     templateDir = f"{baseDir}/pilottemplate"
     dataDir = f"{baseDir}/pilotdata"
     workflowDir = f"{dataDir}/workflow"
@@ -97,7 +99,7 @@ def makePilotData(amountScratch, amountUser):
     workflowPath = f"{dataDir}/workflow/init.yml"
 
     if not dirExists(templateDir):
-        print("Pilot template dir does not exist: {templateDir}")
+        print("pilots: Pilot template dir does not exist: {templateDir}")
         return False
 
     with os.scandir(templateDir) as dh:
@@ -135,6 +137,7 @@ def makePilotData(amountScratch, amountUser):
         ("p", userProjects),
     ):
         kindRep = "of user" if kind == "p" else "(scratch)" if kind == "s" else ""
+        print(f"pilots: {len(projectBatch)} projects {kindRep}")
 
         for (i, p) in enumerate(projectBatch):
             pS = f"{p}"
@@ -180,6 +183,7 @@ def makePilotData(amountScratch, amountUser):
         status=status,
     )
 
+    print("pilots: Workflow ...")
     with open(workflowPath, "w") as fh:
         yaml.dump(workflow, fh)
 
@@ -196,7 +200,7 @@ def main():
     args = sys.argv[1:]
     if len(args) != 2:
         print(HELP)
-        print("Pass exactly two numbers 1..20 as argument")
+        print("pilots: Pass exactly two numbers as argument")
         return
 
     (amountScratch, amountUser) = args[0:2]
@@ -207,19 +211,19 @@ def main():
     if amountS is None or amountU is None:
         print(HELP)
         if amountS is None:
-            print(f"`{amountScratch}` is not a number.")
+            print(f"pilots: `{amountScratch}` is not a number.")
         if amountU is None:
-            print(f"`{amountUser}` is not a number.")
+            print(f"pilots: `{amountUser}` is not a number.")
         return
 
-    if not (1 <= amountS <= 20):
+    if not (0 <= amountS <= MAX_SCRATCH):
         print(HELP)
-        print(f"{amountS} is not in 1..20")
+        print(f"pilots: {amountS} is not in 0..{MAX_SCRATCH}")
         return
 
-    if not (1 <= amountU <= 20):
+    if not (1 <= amountU <= MAX_USER):
         print(HELP)
-        print(f"{amountU} is not in 1..20")
+        print(f"pilots: {amountU} is not in 1..{MAX_USER}")
         return
 
     makePilotData(amountS, amountU)
