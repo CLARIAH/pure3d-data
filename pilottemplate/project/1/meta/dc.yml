@@ -1,5 +1,5 @@
 title: |-
-  project «kind» «num»
+  06-CAA 2023 Workshop «kind» «num»
 
 abstract: |-
   Project is about research into object/place/problem.
@@ -14,7 +14,8 @@ description: |-
 provenance: |-
   The data in this project is collected from this source by these persons.
 
-creator: First name Lastname (Affiliation)
+creator: |-
+  First name Lastname (Affiliation)
 
 contributor:
   - First name Lastname (Affiliation)

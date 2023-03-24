@@ -2,23 +2,26 @@ title: |-
   tutorial
 
 abstract: |-
-  25 Northumberland Road
+  Project is about research into object/place/problem.
 
 description: |-
-  25 Northumberland Road tells of the Irish Volunteers,
-  Michael Malone and Seamus Grace, positioned in that building.
-  This building was the first to engage the British.
+  This edition is about ...
+
+  The 3D data scene are organized ... and  composed of ...
+
+  This edition leads to insights in ...
 
 provenance: |-
-  In Spring 2022, an Honours Course at Maastricht University collaboratively authored
-  a first draft of the Voyager Instance for 25 Northumberland Road.
-  In June 2022, this instance was user-tested via a focus group
-  and a Qualtrics Feedback Survey. 
+  The models and scenes in this edition have been collected
+  from these sources by these persons.
 
-creator: First name Lastname (Affiliation)
+creator: |-
+  First name Lastname (Affiliation)
 
 contributor:
   - First name Lastname (Affiliation)
 
 audience:
   - Digital Humanities
+  - Early Modern History
+  - Art History
