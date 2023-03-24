@@ -1,35 +1,26 @@
 #!/bin/bash
 
 HELP="
-Put additional data within reach of the container.
+Generates pilot data and/or reset pilot/example data.
 
 This can be run on the host, without the need of a running app container.
 
-The data comes from this repo and is placed in CLARIAH/pure3dx/data,
+The generated data ends up in this repo and should be symlinked from
+the working data of the app in CLARIAH/pure3dx/data.
 
-The pure3dx app has working data in CLARIAH/pure3dx/data/working directory.
-
-So the app can access the provisioned data, but the data is not directly
-provisioned to the working data of the app.
+This script can delete working example data and pilotdata.
 
 When the app starts up and discovers it is missing data, it will import it
-from the data directory into the data/working directory.
+from symlinked data directories into the data/working directory.
 
 In test mode, the app can also reset its working data with a fresh copy of the
-provisioned data.
+example data.
 
 NB: None of this provisioning deals with production data!
 
 
-Exactly what data is provisioned is steered by tasks and flags.
-
-
 Tasks
 -----
-
-example
-    Example data. Example data is a directory with data and additional
-    yaml files.
 
 pilot
     Generate pilot data from a template.
@@ -38,10 +29,6 @@ pilot
     That can be overridden by:
     --pilot-user n
     --pilot-scratch n
-
-viewers
-    Client-side code of 3d viewers. This is a directory
-    that needs no further processing within the container.
 
 There are also flag arguments:
 
@@ -64,7 +51,8 @@ There are also flag arguments:
 Usage
 -----
 
-Run it from the toplevel directory in the repo.
+Run it from anywhere, but take care that the from and to directories
+are configured well in the config section in this script.
 
 ./provision.sh [flag or task] [flag or task] ...
 
@@ -79,31 +67,11 @@ but it should not be deployed yet:
 Same, but with deployment, after restart of the app:
 
 ./provision.sh pilot --pilot-scratch 2 --pilot-user 5 --resetpilot
-
-Generate example data, without deployment:
-
-./provision.sh example
-
-Same, but with deployment, after restart of the app:
-
-./provision.sh example --resetexample
-
-To refresh the viewers, and they are immediately visible to the app
-
-./provision.sh viewers
-
-To do everything, with default settings
-
-./provision.sh all
-
-is equivalent to
-
-./provision.sh viewers example pilot
 "
 
 ### begin values for local development
-fromloc_dev="."
-toloc_dev="../pure3dx/data"
+fromloc_dev=~/github/CLARIAH/pure3d-data
+toloc_dev=~/github/CLARIAH/pure3dx/data
 ### end values for local development
 
 ### begin values for production
@@ -121,6 +89,7 @@ resetpilot="x"
 pilotuser="25"
 pilotscratch="4"
 
+isdev="x"
 fromloc="$fromloc_prod"
 toloc="$toloc_prod"
 
@@ -130,6 +99,7 @@ while [ ! -z "$1" ]; do
         exit 0
     fi
     if [[ "$1" == "--dev" ]]; then
+        isdev="v"
         fromloc="$fromloc_dev"
         toloc="$toloc_dev"
         shift
@@ -167,21 +137,15 @@ while [ ! -z "$1" ]; do
     fi
 done
 
-if [[ "$doexample" == "v" ]]; then
-    if [[ "x" == "" ]]; then
-        mkdir -p $toloc
-        key=exampledata
-        echo -e "$fromloc/$key ==> $toloc/$key"
-        if [[ -d $toloc/$key ]]; then
-            rm -rf $toloc/$key
-        fi
-        cp -r $fromloc/$key $toloc/
-    fi
+if [[ "$isdev" == "v" ]]; then
+    echo "PROVISIONING IN DEV MODE"
+else
+    echo "PROVISIONING IN PROD MODE"
 fi
 
 if [[ "$dopilot" == "v" ]]; then
-    python programs/makePilots.py $pilotscratch $pilotuser
-    if [[ "x" == "" ]]; then
+    python programs/makePilots.py "$fromloc" $pilotscratch $pilotuser
+    if [[ "$isdev" == "v" ]]; then
         mkdir -p $toloc
         key=pilotdata
         echo -e "$fromloc/$key ==> $toloc/$key"
@@ -192,14 +156,27 @@ if [[ "$dopilot" == "v" ]]; then
     fi
 fi
 
-if [[ "$doviewers" == "v" ]]; then
-    if [[ "x" == "" ]]; then
-        mkdir -p data
-        echo -e "$fromloc/viewers ==> $toloc/viewers"
-        if [[ -d $toloc/viewers ]]; then
-            rm -rf $toloc/viewers
+if [[ "$doexample" == "v" ]]; then
+    if [[ "$isdev" == "v" ]]; then
+        mkdir -p $toloc
+        key=exampledata
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
         fi
-        cp -r $fromloc/viewers $toloc/
+        cp -r $fromloc/$key $toloc/
+    fi
+fi
+
+if [[ "$doviewers" == "v" ]]; then
+    if [[ "$isdev" == "v" ]]; then
+        mkdir -p $toloc
+        key=viewers
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
+        fi
+        cp -r $fromloc/$key $toloc/
     fi
 fi
 

@@ -2,16 +2,14 @@ import sys
 import os
 import yaml
 
-from PIL import Image, ImageDraw, ImageFont
-
 from files import dirExists, dirCopy, dirMake, fileCopy
 
 
 HELP = """
 
-makePilots.py numberScratch numberUser
+makePilots.py baseDir numberScratch numberUser
 
-Makes a number of empty scratch and user projects in directory `pilotdata`.
+Makes a number of empty scratch and user projects in directory *baseDir*/`pilotdata`.
 
 A fixed number of example projects will be added as visible projects
 with published editions.
@@ -23,48 +21,6 @@ MAX_USER = 50
 MAX_SCRATCH = 10
 
 
-def makeIcon(text, color, bgColor, path):
-    """Makes png icon with a number in it.
-
-    Parameters
-    ----------
-    text: str
-        The text to display in the image.
-    color: RGB-tuple
-        Color of the digits
-    bgColor: RGB-tuple
-        Background color.
-    path: string
-        Where the created image is to be saved.
-    """
-    fnt = ImageFont.truetype(font="Helvetica", size=32)
-    image = Image.new(mode="RGB", size=(64, 64), color=bgColor)
-    draw = ImageDraw.Draw(image)
-    draw.text((5, 10), str(text), font=fnt, fill=color)
-    image.save(path)
-
-
-def makeItemIcon(text, kind, path):
-    """Makes a project/edition icon with a text.
-
-    Parameters
-    ----------
-    text: str
-        The text to display in the image.
-    kind: str
-        `project` or `edition`. This determines
-        the choice of colors.
-    """
-    if kind == "project":
-        color = (255, 155, 0)
-        bgColor = (0, 60, 100)
-    elif kind == "edition":
-        color = (0, 100, 60)
-        bgColor = (255, 200, 225)
-
-    makeIcon(text, color, bgColor, path)
-
-
 def fillinMeta(p, kind, path):
     with open(path) as fh:
         text = fh.read().replace("«num»", f"{p:>02}").replace("«kind»", kind)
@@ -72,7 +28,7 @@ def fillinMeta(p, kind, path):
         fh.write(text)
 
 
-def makePilotData(amountScratch, amountUser):
+def makePilotData(baseDir, amountScratch, amountUser):
     """Instantiates the pilot data template.
 
     Creates fresh pilot data based on the template,
@@ -90,9 +46,9 @@ def makePilotData(amountScratch, amountUser):
     One admin user will be created.
     That will also be the organiser of the scratch projects.
     """
-    baseDir = os.path.abspath(".")
     templateDir = f"{baseDir}/pilottemplate"
     dataDir = f"{baseDir}/pilotdata"
+    iconDir = f"{baseDir}/icons"
     workflowDir = f"{dataDir}/workflow"
     dirMake(dataDir, fresh=True)
     dirMake(workflowDir)
@@ -162,11 +118,11 @@ def makePilotData(amountScratch, amountUser):
                         editionStatus[pS][f"{e}"] = True
 
             else:
-                makeItemIcon(f"{kind}{i1:>02}", "project", f"{projectDest}/icon.png")
+                fileCopy(f"{iconDir}/{kind}{i1:>02}.png", f"{projectDest}/icon.png")
                 metaProject = f"{projectDest}/meta/dc.yml"
                 fillinMeta(i1, kindRep, metaProject)
                 editionDest = f"{projectDest}/edition/1"
-                makeItemIcon("1", "edition", f"{editionDest}/icon.png")
+                fileCopy(f"{iconDir}/e01.png", f"{editionDest}/icon.png")
                 metaEdition = f"{editionDest}/meta/dc.yml"
                 fillinMeta(i1, kindRep, metaEdition)
                 projectWf[pS] = {(f"u{i1:>02}" if kind == "p" else a1): "organiser"}
@@ -198,12 +154,12 @@ def testNum(n):
 
 def main():
     args = sys.argv[1:]
-    if len(args) != 2:
+    if len(args) != 3:
         print(HELP)
-        print("pilots: Pass exactly two numbers as argument")
+        print("pilots: Pass a basedirectory and exactly two numbers as argument")
         return
 
-    (amountScratch, amountUser) = args[0:2]
+    (baseDir, amountScratch, amountUser) = args[0:3]
 
     amountS = testNum(amountScratch)
     amountU = testNum(amountUser)
@@ -226,7 +182,7 @@ def main():
         print(f"pilots: {amountU} is not in 1..{MAX_USER}")
         return
 
-    makePilotData(amountS, amountU)
+    makePilotData(baseDir, amountS, amountU)
 
 
 if __name__ == "__main__":
