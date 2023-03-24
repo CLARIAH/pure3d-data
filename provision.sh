@@ -108,7 +108,7 @@ toloc_dev="../pure3dx/data"
 
 ### begin values for production
 ### !! these values need to be confirmed !!
-fromloc_prod="/app/data/pure3d/data"
+fromloc_prod="/app/data/pure3d-data"
 toloc_prod="/app/data/"
 ### end values for production
 
