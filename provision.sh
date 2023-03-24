@@ -108,8 +108,8 @@ toloc_dev="../pure3dx/data"
 
 ### begin values for production
 ### !! these values need to be confirmed !!
-fromloc_prod="."
-toloc_prod="../pure3dx/data"
+fromloc_prod="/app/data/pure3d/data"
+toloc_prod="/app/data/"
 ### end values for production
 
 dopilot="x"
@@ -168,33 +168,39 @@ while [ ! -z "$1" ]; do
 done
 
 if [[ "$doexample" == "v" ]]; then
-    mkdir -p $toloc
-    key=exampledata
-    echo -e "$fromloc/$key ==> $toloc/$key"
-    if [[ -d $toloc/$key ]]; then
-        rm -rf $toloc/$key
+    if [[ "x" == "" ]]; then
+        mkdir -p $toloc
+        key=exampledata
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
+        fi
+        cp -r $fromloc/$key $toloc/
     fi
-    cp -r $fromloc/$key $toloc/
 fi
 
 if [[ "$dopilot" == "v" ]]; then
     python programs/makePilots.py $pilotscratch $pilotuser
-    mkdir -p $toloc
-    key=pilotdata
-    echo -e "$fromloc/$key ==> $toloc/$key"
-    if [[ -d $toloc/$key ]]; then
-        rm -rf $toloc/$key
+    if [[ "x" == "" ]]; then
+        mkdir -p $toloc
+        key=pilotdata
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
+        fi
+        cp -r $fromloc/$key $toloc/
     fi
-    cp -r $fromloc/$key $toloc/
 fi
 
 if [[ "$doviewers" == "v" ]]; then
-    mkdir -p data
-    echo -e "$fromloc/viewers ==> $toloc/viewers"
-    if [[ -d $toloc/viewers ]]; then
-        rm -rf $toloc/viewers
+    if [[ "x" == "" ]]; then
+        mkdir -p data
+        echo -e "$fromloc/viewers ==> $toloc/viewers"
+        if [[ -d $toloc/viewers ]]; then
+            rm -rf $toloc/viewers
+        fi
+        cp -r $fromloc/viewers $toloc/
     fi
-    cp -r $fromloc/viewers $toloc/
 fi
 
 if [[ "$doresetexample" == "v" ]]; then
@@ -206,7 +212,7 @@ if [[ "$doresetexample" == "v" ]]; then
 fi
 
 if [[ "$doresetpilot" == "v" ]]; then
-    workingdir=$toloc/working/pilot
+    workingdir="$toloc/working/pilot"
     echo -e "removing working pilot data: $workingdir"
     if [[ -e "$workingdir" ]]; then
         rm -rf "$workingdir"
