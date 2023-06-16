@@ -1,0 +1,61 @@
+title: |-
+  Pure3D
+
+abstract: |-
+  Pure3D: Scholarly projects centered around 3D data.
+
+description: |-
+  PURE3D is a three-year project funded by the
+  [PDI-SSH (Platform Digitale Infrastructuur–Social Sciences and Humanities)](https://pdi-ssh.nl/nl/home/)
+  with a mission to advance the virtual research environment through the
+  development of an access
+  infrastructure for viewing interactive Digital Heritage and Digital
+  Humanities 3D content online. The platform intends to target the unique needs
+  and abilities of both the content creators (researchers, educators, cultural
+  heritage managers) as well as the end-users (students, public, academics,
+  etc.).
+
+  Building on the conventions of text-based digital scholarly editions, PURE3D
+  will provide tools to integrate multiple types of source materials (e.g.,
+  annotations, images, video, structured/unstructured data) and document the
+  creation process (paradata), providing users with direct access to the
+  modelling and interpretative choices creating a multimodal resource
+  impossible to replicate in print form.
+
+  PURE3D is aware of the issues that research-based 3D content creators may
+  encounter in making their projects and data accessible on the web. File size,
+  format, technical know-how and funding are some of the issues. The PURE3D
+  platform will act as a preservation repository for projects, developing a
+  conceptual and methodological framework for valorizing and evaluating 3D
+  scholarship, so that the outputs of 3D digital scholarship can meaningfully
+  contribute to the whole of the academic ecosystem.
+
+  The PURE3D Project is based out of the
+  [Faculty of Arts and Social Sciences at Maastricht University](https://www.maastrichtuniversity.nl/about-um/faculties/faculty-arts-and-social-sciences)
+  under the direction of
+  [Dr. Costas Papadopoulos](https://www.maastrichtuniversity.nl/k.papadopoulos)
+  and
+  Prof. Susan Schreibman.
+  A number of partner institutions join PURE3D as pilot
+  projects or in advisory roles and technical support. 
+
+  **This platform is in a alpha-phase of production and is currently only
+  displaying a selection of 3D editions developed by project partners in the
+  last year. As such, it is not yet possible to build and publish your own 3D
+  project at this time. Please follow us on social media as development on the
+  platform continues. For more information about the Project with news and
+  event updates, please visit the
+  [project website](https://pure3d.eu/).** 
+  
+provenance: |-
+  ### Software development
+
+  Building Pure3D has taken place at the KNAW/HuC (Humanities Cluster).
+
+  * [GitHub](https://github.com/CLARIAH/pure3dx)
+
+  * [Technical documentation](https://clariah.github.io/pure3dx/control/index.html)
+
+  Pure3D makes use of 3D viewer software developed by others:
+
+  * [Smithsonian Voyager](https://github.com/smithsonian/dpo-voyager)

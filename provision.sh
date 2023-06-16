@@ -35,6 +35,11 @@ pilot
     --pilot-user n
     --pilot-scratch n
 
+custom
+    Generate custom data from a source directory.
+    It will merge this with the data in the customtemplate directory.
+    The source directory can be passed after the flag --customdir
+
 There are also flag arguments:
 
 --dev
@@ -47,11 +52,17 @@ There are also flag arguments:
 --resetpilot
     Will delete the the working pilot data
 
+--resetcustom
+    Will delete the the working custom data
+
 --pilot-user n
     Number of pilot users to generate.
 
 --pilot-scratch n
     Number of scratch users to generate.
+
+--custom-dir path
+    Path to the source directory of the custom data.
 
 Usage
 -----
@@ -72,6 +83,10 @@ but it should not be deployed yet:
 Same, but with deployment, after restart of the app:
 
 ./provision.sh pilot --pilot-scratch 2 --pilot-user 5 --resetpilot
+
+Generate custom data from ~/me/local/pure3d/2023-06-21:
+
+./provision.sh custom --custom-dir ~/me/local/pure3d/2023-06-21:
 "
 
 ### begin values for local development
@@ -87,10 +102,12 @@ toloc_prod="/app/data/"
 
 dopilot="x"
 doexample="x"
+docustom="x"
 doviewers="x"
 resetexample="x"
 resetpilot="x"
 
+customdir=""
 pilotuser="25"
 pilotscratch="4"
 
@@ -114,12 +131,10 @@ while [ ! -z "$1" ]; do
     elif [[ "$1" == "example" ]]; then
         doexample="v"
         shift
-    elif [[ "$1" == "viewers" ]]; then
-        doviewers="v"
+    elif [[ "$1" == "custom" ]]; then
+        docustom="v"
         shift
-    elif [[ "$1" == "all" ]]; then
-        dopilot="v"
-        doexample="v"
+    elif [[ "$1" == "viewers" ]]; then
         doviewers="v"
         shift
     elif [[ "$1" == "--resetexample" ]]; then
@@ -128,6 +143,9 @@ while [ ! -z "$1" ]; do
     elif [[ "$1" == "--resetpilot" ]]; then
         doresetpilot="v"
         shift
+    elif [[ "$1" == "--resetcustom" ]]; then
+        doresetcustom="v"
+        shift
     elif [[ "$1" == "--pilot-user" ]]; then
         shift
         pilotuser=$1
@@ -135,6 +153,10 @@ while [ ! -z "$1" ]; do
     elif [[ "$1" == "--pilot-scratch" ]]; then
         shift
         pilotscratch=$1
+        shift
+    elif [[ "$1" == "--custom-dir" ]]; then
+        shift
+        customdir="$1"
         shift
     else
         echo "unrecognized argument '$1'"
@@ -150,9 +172,33 @@ fi
 
 if [[ "$dopilot" == "v" ]]; then
     python programs/makePilots.py "$fromloc" $pilotscratch $pilotuser
+
     if [[ "$isdev" == "v" ]]; then
         mkdir -p $toloc
         key=pilotdata
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
+        fi
+        cp -r $fromloc/$key $toloc/
+    fi
+fi
+
+if [[ "$docustom" == "v" ]]; then
+    if [[ "$customdir" == "" ]]; then
+        echo "Pass --custom-dir path to specify a source location"
+        exit
+    fi
+    if [[ ! -d "$customdir" ]]; then
+        echo "Source directory $customdir does not exist"
+        exit
+    fi
+
+    python programs/makeCustom.py "$customdir" "$fromloc"
+
+    if [[ "$isdev" == "v" ]]; then
+        mkdir -p $toloc
+        key=customdata
         echo -e "$fromloc/$key ==> $toloc/$key"
         if [[ -d $toloc/$key ]]; then
             rm -rf $toloc/$key
@@ -198,6 +244,14 @@ fi
 if [[ "$doresetpilot" == "v" ]]; then
     workingdir="$toloc/working/pilot"
     echo -e "removing working pilot data: $workingdir"
+    if [[ -e "$workingdir" ]]; then
+        rm -rf "$workingdir"
+    fi
+fi
+
+if [[ "$doresetcustom" == "v" ]]; then
+    workingdir="$toloc/working/custom"
+    echo -e "removing working custom data: $workingdir"
     if [[ -e "$workingdir" ]]; then
         rm -rf "$workingdir"
     fi

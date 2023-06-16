@@ -134,6 +134,11 @@ def readYaml(path, defaultEmpty=False):
     return deepAttrDict(data)
 
 
+def dirNm(path):
+    """Get the directory part of a file name."""
+    return os.path.dirname(path)
+
+
 def fileExists(path):
     """Whether a path exists as file on the file system.
     """
@@ -152,7 +157,11 @@ def fileCopy(pathSrc, pathDst):
 
     Wipes the destination file, if it exists.
     """
+
     if fileExists(pathSrc):
+        dirDst = dirNm(pathDst)
+        if not dirExists(dirDst):
+            dirMake(dirDst)
         fileRemove(pathDst)
         copy(pathSrc, pathDst)
 
@@ -298,3 +307,25 @@ def list3d(path):
                 files.append(name)
 
     return files
+
+
+def collectFiles(path):
+    """Collects all the files in a directory, recursively.
+
+    The result is delivered as a list of relative paths to the folder.
+    """
+
+    def collect(prefix, relpath):
+        files = []
+
+        for entry in os.listdir(relpath):
+            thisPath = f"{relpath}/{entry}"
+
+            if os.path.isfile(thisPath):
+                files.append(f"{prefix}{entry}")
+            elif os.path.isdir(thisPath):
+                files.extend(collect(f"{prefix}{entry}/", thisPath))
+
+        return files
+
+    return collect("", path)

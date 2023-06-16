@@ -57,6 +57,7 @@ _temp/
 #####################
 data/
 pilotdata/
+customdata/
 
 # Experiments
 _experiments/
