@@ -22,6 +22,11 @@ NB: None of this provisioning deals with production data!
 Tasks
 -----
 
+viewers
+    Copy the viewer software from pure3d data to the data directory of pure3dx
+    Regrettably, we cannot put a symbolic link in pure3dx/data because the docker
+    machinery does not follow symlinks out of the parent directory of the repo pure3dx.
+
 pilot
     Generate pilot data from a template.
     By default it generates 4 scratch projects and 25 users with one project
@@ -177,6 +182,8 @@ if [[ "$doviewers" == "v" ]]; then
             rm -rf $toloc/$key
         fi
         cp -r $fromloc/$key $toloc/
+    else
+        echo "Viewer provisioning can only be done in dev mode"
     fi
 fi
 

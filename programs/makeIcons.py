@@ -15,7 +15,7 @@ in directory *baseDir*/`icons`.
 
 N_SCRATCH = 99
 N_USER = 99
-N_EDITION = 9
+N_EDITION = 99
 
 
 def makeIcon(text, color, bgColor, path):

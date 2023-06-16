@@ -1,0 +1,13 @@
+userRole:
+  site:
+    admin: admin
+  project: {}
+  edition: {}
+
+status:
+  project:
+    field: isVisible
+    values: {}
+  edition:
+    field: isPublished
+    values: {}
