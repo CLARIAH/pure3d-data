@@ -1,7 +1,7 @@
 #!/bin/bash
 
 HELP="
-Generates pilot data and/or reset pilot/example data.
+Generates pilot data and/or reset custom/pilot/example data.
 
 This can be run on the host, without the need of a running app container.
 
