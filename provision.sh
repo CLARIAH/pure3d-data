@@ -27,6 +27,9 @@ viewers
     Regrettably, we cannot put a symbolic link in pure3dx/data because the docker
     machinery does not follow symlinks out of the parent directory of the repo pure3dx.
 
+example
+    Copies example data to the pure3dapp data directory
+
 pilot
     Generate pilot data from a template.
     By default it generates 4 scratch projects and 25 users with one project
