@@ -13,9 +13,10 @@ in directory *baseDir*/`icons`.
 """
 
 
-N_SCRATCH = 99
-N_USER = 99
-N_EDITION = 99
+N_EXAMPLE = 9
+N_SCRATCH = 9
+N_USER = 39
+N_EDITION = 9
 
 
 def makeIcon(text, color, bgColor, path):
@@ -66,6 +67,7 @@ def makeIcons():
     dirMake(iconDir, fresh=True)
 
     for (kind, tp, amount) in (
+        ("x", "project", N_EXAMPLE),
         ("s", "project", N_SCRATCH),
         ("p", "project", N_USER),
         ("e", "edition", N_EDITION),

@@ -7,11 +7,11 @@ from files import dirExists, dirCopy, dirMake, fileCopy
 
 HELP = """
 
-makePilots.py baseDir numberScratch numberUser
+makePilots.py baseDir numberExample numberScratch numberUser
 
 Makes a number of empty scratch and user projects in directory *baseDir*/`pilotdata`.
 
-A fixed number of example projects will be added as visible projects
+A number of example projects will be added as visible projects
 with published editions.
 """
 
@@ -28,7 +28,7 @@ def fillinMeta(p, kind, path):
         fh.write(text)
 
 
-def makePilotData(baseDir, amountScratch, amountUser):
+def makePilotData(baseDir, amountExample, amountScratch, amountUser):
     """Instantiates the pilot data template.
 
     Creates fresh pilot data based on the template,
@@ -70,16 +70,15 @@ def makePilotData(baseDir, amountScratch, amountUser):
     projectSource = f"{templateDir}/project/1"
     exampleSource = f"{baseDir}/exampledata/project"
 
-    allProjects = list(range(1, EXAMPLE_AMOUNT + amountScratch + amountUser + 1))
-    exampleProjects = list(range(1, EXAMPLE_AMOUNT + 1))
-    scratchProjects = list(
-        range(EXAMPLE_AMOUNT + 1, EXAMPLE_AMOUNT + amountScratch + 1)
-    )
-    userProjects = list(range(EXAMPLE_AMOUNT + amountScratch + 1, len(allProjects) + 1))
+    exampleProjects = [f"x{i:>02}" for i in range(1, amountExample + 1)]
+    scratchProjects = [f"s{i:>02}" for i in range(1, amountScratch + 1)]
+    userProjects = [f"p{i:>02}" for i in range(1, amountUser + 1)]
+
+    allProjects = exampleProjects + scratchProjects + userProjects
 
     a1 = "a1"
 
-    users = {f"u{i + 1:>02}": "user" for (i, p) in enumerate(userProjects)}
+    users = {u: "user" for u in allProjects}
     users[a1] = "admin"
 
     projectWf = {}
@@ -87,47 +86,48 @@ def makePilotData(baseDir, amountScratch, amountUser):
     projectStatus = {}
     editionStatus = {}
 
-    for (kind, projectBatch) in (
-        ("e", exampleProjects),
+    for kind, projectBatch in (
+        ("x", exampleProjects),
         ("s", scratchProjects),
         ("p", userProjects),
     ):
-        kindRep = "of user" if kind == "p" else "(scratch)" if kind == "s" else ""
+        kindRep = (
+            "of user" if kind == "p" else "(scratch)" if kind == "s" else "(example)"
+        )
         print(f"pilots: {len(projectBatch)} projects {kindRep}")
 
-        for (i, p) in enumerate(projectBatch):
-            pS = f"{p}"
-            i1 = i + 1
+        for p in projectBatch:
             projectSource = (
-                f"{exampleSource}/{p}" if kind == "e" else f"{templateDir}/project/1"
+                f"{exampleSource}/{int(p[1:])}"
+                if kind == "x"
+                else f"{templateDir}/project/1"
             )
             projectDest = f"{dataDir}/project/{p}"
             dirCopy(projectSource, projectDest)
 
-            projectStatus[pS] = kind == "e"
+            projectStatus[p] = kind == "x"
 
-            editionStatus[pS] = {}
+            editionStatus[p] = {}
 
-            if kind == "e":
-                editionStatus
+            if kind == "x":
                 with os.scandir(f"{projectDest}/edition") as dh:
                     for entry in dh:
                         e = entry.name
                         if not e.isdigit() or not entry.is_dir():
                             continue
-                        editionStatus[pS][f"{e}"] = True
+                        editionStatus[p][f"{e}"] = True
 
             else:
-                fileCopy(f"{iconDir}/{kind}{i1:>02}.png", f"{projectDest}/icon.png")
+                fileCopy(f"{iconDir}/{p}.png", f"{projectDest}/icon.png")
                 metaProject = f"{projectDest}/meta/dc.yml"
-                fillinMeta(i1, kindRep, metaProject)
+                fillinMeta(p, kindRep, metaProject)
                 editionDest = f"{projectDest}/edition/1"
                 fileCopy(f"{iconDir}/e01.png", f"{editionDest}/icon.png")
                 metaEdition = f"{editionDest}/meta/dc.yml"
-                fillinMeta(i1, kindRep, metaEdition)
-                projectWf[pS] = {(f"u{i1:>02}" if kind == "p" else a1): "organiser"}
-                editionWf[pS] = {"1": {(f"u{i1:>02}" if kind == "p" else a1): "editor"}}
-                editionStatus[pS]["1"] = False
+                fillinMeta(p, kindRep, metaEdition)
+                projectWf[p] = {p: "organiser"}
+                editionWf[p] = {"1": {p: "editor"}}
+                editionStatus[p]["1"] = False
 
     status = dict(
         project=dict(field="isVisible", values=projectStatus),
@@ -154,35 +154,47 @@ def testNum(n):
 
 def main():
     args = sys.argv[1:]
-    if len(args) != 3:
+    if len(args) != 4:
         print(HELP)
         print("pilots: Pass a basedirectory and exactly two numbers as argument")
         return
 
-    (baseDir, amountScratch, amountUser) = args[0:3]
+    (baseDir, amountExample, amountScratch, amountUser) = args[0:4]
 
+    amountE = testNum(amountExample)
     amountS = testNum(amountScratch)
     amountU = testNum(amountUser)
 
-    if amountS is None or amountU is None:
+    if amountE is None or amountS is None or amountU is None:
         print(HELP)
+        if amountE is None:
+            print(f"pilots: `{amountExample}` is not a number.")
         if amountS is None:
             print(f"pilots: `{amountScratch}` is not a number.")
         if amountU is None:
             print(f"pilots: `{amountUser}` is not a number.")
         return
 
+    good = True
+    if not (0 <= amountE <= EXAMPLE_AMOUNT):
+        print(HELP)
+        print(f"pilots: {amountE} is not in 0..{EXAMPLE_AMOUNT}")
+        good = False
+
     if not (0 <= amountS <= MAX_SCRATCH):
         print(HELP)
         print(f"pilots: {amountS} is not in 0..{MAX_SCRATCH}")
-        return
+        good = False
 
     if not (1 <= amountU <= MAX_USER):
         print(HELP)
         print(f"pilots: {amountU} is not in 1..{MAX_USER}")
+        good = False
+
+    if not good:
         return
 
-    makePilotData(baseDir, amountS, amountU)
+    makePilotData(baseDir, amountE, amountS, amountU)
 
 
 if __name__ == "__main__":

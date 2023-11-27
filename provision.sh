@@ -35,6 +35,7 @@ pilot
     By default it generates 4 scratch projects and 25 users with one project
     for each user.
     That can be overridden by:
+    --pilot-example n
     --pilot-user n
     --pilot-scratch n
 
@@ -60,6 +61,9 @@ There are also flag arguments:
 
 --pilot-user n
     Number of pilot users to generate.
+
+--pilot-example n
+    Number of example projects to generate.
 
 --pilot-scratch n
     Number of scratch users to generate.
@@ -112,6 +116,7 @@ resetexample="x"
 resetpilot="x"
 
 customdir=""
+pilotexample="3"
 pilotuser="25"
 pilotscratch="4"
 
@@ -153,6 +158,14 @@ while [ ! -z "$1" ]; do
     elif [[ "$1" == "--resetcustom" ]]; then
         doresetcustom="v"
         shift
+    elif [[ "$1" == "--pilot-example" ]]; then
+        shift
+        pilotexample=$1
+        shift
+    elif [[ "$1" == "--pilot-scratch" ]]; then
+        shift
+        pilotscratch=$1
+        shift
     elif [[ "$1" == "--pilot-user" ]]; then
         shift
         pilotuser=$1
@@ -190,7 +203,7 @@ if [[ "$doprod" == "v" ]]; then
 fi
 
 if [[ "$dopilot" == "v" ]]; then
-    python programs/makePilots.py "$fromloc" $pilotscratch $pilotuser
+    python programs/makePilots.py "$fromloc" $pilotexample $pilotscratch $pilotuser
 
     if [[ "$isdev" == "v" ]]; then
         mkdir -p $toloc
