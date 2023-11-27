@@ -103,6 +103,7 @@ fromloc_prod="/app/data/pure3d-data"
 toloc_prod="/app/data/"
 ### end values for production
 
+doprod="x"
 dopilot="x"
 doexample="x"
 docustom="x"
@@ -127,6 +128,9 @@ while [ ! -z "$1" ]; do
         isdev="v"
         fromloc="$fromloc_dev"
         toloc="$toloc_dev"
+        shift
+    elif [[ "$1" == "prod" ]]; then
+        doprod="v"
         shift
     elif [[ "$1" == "pilot" ]]; then
         dopilot="v"
@@ -171,6 +175,18 @@ if [[ "$isdev" == "v" ]]; then
     echo "PROVISIONING IN DEV MODE"
 else
     echo "PROVISIONING IN PROD MODE"
+fi
+
+if [[ "$doprod" == "v" ]]; then
+    if [[ "$isdev" == "v" ]]; then
+        mkdir -p $toloc
+        key=proddata
+        echo -e "$fromloc/$key ==> $toloc/$key"
+        if [[ -d $toloc/$key ]]; then
+            rm -rf $toloc/$key
+        fi
+        cp -r $fromloc/$key $toloc/
+    fi
 fi
 
 if [[ "$dopilot" == "v" ]]; then
